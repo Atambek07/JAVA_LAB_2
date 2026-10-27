@@ -1,0 +1,11 @@
+#!/bin/bash
+APP_DIR="/home/atambek/LibraryProject/LibraryProject"
+mkdir -p "$APP_DIR/.gradle"
+
+# Download gradle if not exists
+if [ ! -d "$HOME/.gradle/wrapper/dists/gradle-8.5-bin" ]; then
+    echo "Downloading gradle..."
+fi
+
+# For now, use system gradle or fail
+exec /usr/bin/gradle "$@"
